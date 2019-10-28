@@ -1,4 +1,11 @@
 package ca.areswg.shadowdestiny.proxy;
 
-public class ClientProxy {
+import net.minecraft.world.World;
+
+public class ClientProxy implements IProxy{
+
+    @Override
+    public World getClientWorld() {
+        return null;
+    }
 }

@@ -1,0 +1,6 @@
+{
+  "parent": "block/cube_all",
+  "textures":{
+    "all": "shadowdestiny:block/adamas_metal_block.png"
+  }
+}

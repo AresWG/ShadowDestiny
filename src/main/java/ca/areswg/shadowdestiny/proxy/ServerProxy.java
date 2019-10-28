@@ -1,4 +1,10 @@
 package ca.areswg.shadowdestiny.proxy;
 
-public class ServerProxy {
+import net.minecraft.world.World;
+
+public class ServerProxy implements IProxy{
+    @Override
+    public World getClientWorld() {
+        throw new IllegalStateException("Only Run this on the client");
+    }
 }
