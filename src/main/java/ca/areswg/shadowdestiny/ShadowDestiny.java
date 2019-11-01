@@ -1,7 +1,7 @@
 package ca.areswg.shadowdestiny;
 
 import ca.areswg.shadowdestiny.blocks.AdamasBlock;
-import ca.areswg.shadowdestiny.blocks.AdamasGemBlock;
+import ca.areswg.shadowdestiny.blocks.GemBlock;
 import ca.areswg.shadowdestiny.blocks.ModBlocks;
 import ca.areswg.shadowdestiny.items.AdamasGem;
 import ca.areswg.shadowdestiny.items.AdamasIngot;
@@ -52,7 +52,7 @@ public class ShadowDestiny {
         @SubscribeEvent
         public static void onBlocksRegistry(final RegistryEvent.Register<Block> event) {
             event.getRegistry().register(new AdamasBlock());
-            event.getRegistry().register(new AdamasGemBlock());
+            event.getRegistry().register(new GemBlock());
         }
         @SubscribeEvent
         public static void onItemsRegistry(final RegistryEvent.Register<Item> event) {
@@ -60,7 +60,7 @@ public class ShadowDestiny {
                     .group(setup.itemGroup);
             //Blocks
             event.getRegistry().register(new BlockItem(ModBlocks.ADAMASBLOCK, properties).setRegistryName("adamasblock"));
-            event.getRegistry().register(new BlockItem(ModBlocks.ADAMASGEMBLOCK, properties).setRegistryName("adamasgemblock.json"));
+            event.getRegistry().register(new BlockItem(ModBlocks.GEMBLOCK, properties).setRegistryName("gemblock"));
             //Items
             event.getRegistry().register(new AdamasIngot());
             event.getRegistry().register(new AdamasGem());

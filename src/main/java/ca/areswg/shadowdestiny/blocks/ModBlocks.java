@@ -7,6 +7,6 @@ public class ModBlocks {
     @ObjectHolder("shadowdestiny:adamasblock")
     public static AdamasBlock ADAMASBLOCK;
 
-    @ObjectHolder("shadoedestiny:adamasgemblock.json")
-    public static AdamasGemBlock ADAMASGEMBLOCK;
+    @ObjectHolder("shadoedestiny:adamasgem.json")
+    public static GemBlock GEMBLOCK;
 }
