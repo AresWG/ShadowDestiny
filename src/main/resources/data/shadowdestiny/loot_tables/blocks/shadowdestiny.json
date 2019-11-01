@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:block",
+  "pools": [
+    {
+      "name": "adamasblock",
+      "rolls": 1,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "shadowdestiny:adamasblock"
+        }
+      ],
+      "conditions":[
+        {
+          "condition":"minecraft:survives_explosion"
+        }
+      ]
+    }
+  ]
+}

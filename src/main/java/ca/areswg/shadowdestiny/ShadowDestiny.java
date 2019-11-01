@@ -46,8 +46,7 @@ public class ShadowDestiny {
     public static class RegistryEvents {
         @SubscribeEvent
         public static void onBlocksRegistry(final RegistryEvent.Register<Block> event) {
-            event.getRegistry().register(new AdamasBlock());
-        }
+            event.getRegistry().register(new AdamasBlock());        }
         @SubscribeEvent
         public static void onItemsRegistry(final RegistryEvent.Register<Item> event) {
             event.getRegistry().register(new BlockItem(ModBlocks.ADAMASBLOCK, new Item.Properties()).setRegistryName("adamasblock"));
