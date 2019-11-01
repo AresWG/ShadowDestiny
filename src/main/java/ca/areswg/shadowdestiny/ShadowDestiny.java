@@ -4,6 +4,7 @@ import ca.areswg.shadowdestiny.blocks.AdamasBlock;
 import ca.areswg.shadowdestiny.blocks.ModBlocks;
 import ca.areswg.shadowdestiny.proxy.ClientProxy;
 import ca.areswg.shadowdestiny.proxy.IProxy;
+import ca.areswg.shadowdestiny.proxy.ModSetup;
 import ca.areswg.shadowdestiny.proxy.ServerProxy;
 import net.minecraft.block.Block;
 import net.minecraft.item.BlockItem;
@@ -24,6 +25,8 @@ public class ShadowDestiny {
 
     public static IProxy proxy = DistExecutor.runForDist(() -> () ->  new ClientProxy(), () -> () -> new ServerProxy());
 
+    public static ModSetup setup = new ModSetup();
+
     private static final Logger LOGGER = LogManager.getLogger();
 
     public ShadowDestiny() {
@@ -34,8 +37,9 @@ public class ShadowDestiny {
         // MinecraftForge.EVENT_BUS.register(this);
     }
 
-    private void setup(final FMLCommonSetupEvent event) {
-
+    public void setup(final FMLCommonSetupEvent event) {
+        setup.init();
+        proxy.init();
     }
 
 
