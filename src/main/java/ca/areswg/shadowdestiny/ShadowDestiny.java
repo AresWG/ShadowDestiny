@@ -1,9 +1,13 @@
 package ca.areswg.shadowdestiny;
 
 import ca.areswg.shadowdestiny.blocks.AdamasBlock;
+import ca.areswg.shadowdestiny.blocks.AdamasGemBlock;
 import ca.areswg.shadowdestiny.blocks.ModBlocks;
+import ca.areswg.shadowdestiny.items.AdamasGem;
+import ca.areswg.shadowdestiny.items.AdamasIngot;
 import ca.areswg.shadowdestiny.proxy.ClientProxy;
 import ca.areswg.shadowdestiny.proxy.IProxy;
+import ca.areswg.shadowdestiny.proxy.ModSetup;
 import ca.areswg.shadowdestiny.proxy.ServerProxy;
 import net.minecraft.block.Block;
 import net.minecraft.item.BlockItem;
@@ -23,7 +27,7 @@ import org.apache.logging.log4j.Logger;
 public class ShadowDestiny {
 
     public static IProxy proxy = DistExecutor.runForDist(() -> () ->  new ClientProxy(), () -> () -> new ServerProxy());
-
+    public static ModSetup setup = new ModSetup();
     private static final Logger LOGGER = LogManager.getLogger();
 
     public ShadowDestiny() {
@@ -35,7 +39,8 @@ public class ShadowDestiny {
     }
 
     private void setup(final FMLCommonSetupEvent event) {
-
+        setup.init();
+        proxy.init();
     }
 
 
@@ -46,10 +51,19 @@ public class ShadowDestiny {
     public static class RegistryEvents {
         @SubscribeEvent
         public static void onBlocksRegistry(final RegistryEvent.Register<Block> event) {
-            event.getRegistry().register(new AdamasBlock());        }
+            event.getRegistry().register(new AdamasBlock());
+            event.getRegistry().register(new AdamasGemBlock());
+        }
         @SubscribeEvent
         public static void onItemsRegistry(final RegistryEvent.Register<Item> event) {
-            event.getRegistry().register(new BlockItem(ModBlocks.ADAMASBLOCK, new Item.Properties()).setRegistryName("adamasblock"));
+            Item.Properties properties =new Item.Properties()
+                    .group(setup.itemGroup);
+            //Blocks
+            event.getRegistry().register(new BlockItem(ModBlocks.ADAMASBLOCK, properties).setRegistryName("adamasblock"));
+            event.getRegistry().register(new BlockItem(ModBlocks.ADAMASGEMBLOCK, properties).setRegistryName("adamasgemblock.json"));
+            //Items
+            event.getRegistry().register(new AdamasIngot());
+            event.getRegistry().register(new AdamasGem());
         }
     }
 }

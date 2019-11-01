@@ -1,3 +1,8 @@
 {
-  "block.shadowdestiny.adamasblock": "Adamas Block"
+  "item.shadowdestiny.adamasingot": "Adamas Ingot",
+
+  "block.shadowdestiny.adamasblock": "Adamas Block",
+
+  "_comment": "Creative_Tabs",
+  "itemGroup.shadowdestiny": "Shadow Destiny"
 }

@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "shadowdestiny:adamasgemblock"
+    }
+  ],
+  "result": {
+    "item": "shadowdestiny:adamasgem",
+    "count": 9
+  }
+}
