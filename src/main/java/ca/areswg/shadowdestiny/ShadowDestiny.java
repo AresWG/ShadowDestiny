@@ -2,6 +2,7 @@ package ca.areswg.shadowdestiny;
 
 import ca.areswg.shadowdestiny.blocks.AdamasBlock;
 import ca.areswg.shadowdestiny.blocks.ModBlocks;
+import ca.areswg.shadowdestiny.items.AdamasIngot;
 import ca.areswg.shadowdestiny.proxy.ClientProxy;
 import ca.areswg.shadowdestiny.proxy.IProxy;
 import ca.areswg.shadowdestiny.proxy.ModSetup;
@@ -48,12 +49,20 @@ public class ShadowDestiny {
     // Event bus for receiving Registry Events)
     @Mod.EventBusSubscriber(bus = Mod.EventBusSubscriber.Bus.MOD)
     public static class RegistryEvents {
+
+
         @SubscribeEvent
         public static void onBlocksRegistry(final RegistryEvent.Register<Block> event) {
             event.getRegistry().register(new AdamasBlock());        }
         @SubscribeEvent
         public static void onItemsRegistry(final RegistryEvent.Register<Item> event) {
-            event.getRegistry().register(new BlockItem(ModBlocks.ADAMASBLOCK, new Item.Properties()).setRegistryName("adamasblock"));
+            //blocks in inventory  Register
+            Item.Properties properties = new Item.Properties()
+                    .group(setup.itemGroup);
+            event.getRegistry().register(new BlockItem(ModBlocks.ADAMASBLOCK, properties).setRegistryName("adamasblock"));
+
+            //Items Register
+            event.getRegistry().register(new AdamasIngot());
         }
     }
 }
