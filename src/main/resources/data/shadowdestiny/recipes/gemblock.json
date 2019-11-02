@@ -7,10 +7,10 @@
   ],
   "key":{
     "X":{
-      "item": "shadowdestiny:adamasingot"
+      "item": "shadowdestiny:adamasblock"
     }
   },
   "result":{
-    "item": "shadowdestiny:adamasblock"
+    "item": "shadowdestiny:gemblock"
   }
 }
